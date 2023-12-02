@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <title>VT Event Page</title>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv='Content-Type' content='text/html'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-size: 1rem;
+            line-height: 80%;
+            font-weight: 200;
+            font-family: 'Jua', sans-serif;
+            text-align: center;
+            background-size:cover;
+            background-position:50%;
+        }
+        .deadline{ display: inline-flex; text-align: center; z-index:10; }
+        a {
+            color: #00b7ff;
+        }
+        @media (max-width:360px){html{font-size:14px;} .deadline{ width: 72%; } #main_img {width: 79%;}  #main_img1 {width: 79%;}.banner {width: 300px; height: 15px;} .banner ul li {width: 300px; height: 15px;}}
+        @media (min-width:361px) and (max-width:399px){html{font-size:15px;} .deadline{ width: 68%; } #main_img {width: 78%;}  #main_img1 {width: 78%;}.banner {width: 310px; height: 16px;} .banner ul li {width: 300px; height: 16px;}}
+        @media (min-width:400px) and (max-width:439px){html{font-size:16px;} .deadline{ width: 64%; } #main_img {width: 77%;}  #main_img1 {width: 77%;}.banner {width: 320px; height: 17px;} .banner ul li {width: 320px; height: 17px;}}
+        @media (min-width:440px) and (max-width:479px){html{font-size:17px;} .deadline{ width: 60%; } #main_img {width: 76%;}  #main_img1 {width: 76%;}.banner {width: 330px; height: 18px;} .banner ul li {width: 330px; height: 18px;}}
+        @media (min-width:480px) and (max-width:519px){html{font-size:18px;} .deadline{ width: 56%; } #main_img {width: 75%;}  #main_img1 {width: 75%;}.banner {width: 340px; height: 19px;} .banner ul li {width: 340px; height: 19px;}}
+        @media (min-width:520px) and (max-width:559px){html{font-size:19px;} .deadline{ width: 52%; } #main_img {width: 74%;}  #main_img1 {width: 74%;}.banner {width: 350px; height: 20px;} .banner ul li {width: 350px; height: 20px;}}
+        @media (min-width:560px) and (max-width:599px){html{font-size:19px;} .deadline{ width: 48%; } #main_img {width: 73%;}  #main_img1 {width: 73%;}.banner {width: 360px; height: 21px;} .banner ul li {width:  360px; height: 21px;}}
+        @media (min-width:600px) and (max-width:639px){html{font-size:20px;} .deadline{ width: 44%; } #main_img {width: 72%;}  #main_img1 {width: 72%;}.banner {width: 370px; height: 22px;} .banner ul li {width: 370px; height: 22px;}}
+        @media (min-width:640px) and (max-width:679px){html{font-size:20px;} .deadline{ width: 40%; } #main_img {width: 71%;}  #main_img1 {width: 71%;}.banner {width: 380px; height: 23px;} .banner ul li {width: 380px; height: 23px;}}
+        @media (min-width:680px) and (max-width:719px){html{font-size:21px;} .deadline{ width: 36%; } #main_img {width: 70%;}  #main_img1 {width: 70%;}.banner {width: 390px; height: 24px;} .banner ul li {width: 390px; height: 24px;}}
+        @media (min-width:720px) and (max-width:759px){html{font-size:21px;} .deadline{ width: 32%; } #main_img {width: 69%;}  #main_img1 {width: 69%;}.banner {width: 400px; height: 25px;} .banner ul li {width: 400px; height: 25px;}}
+        @media (min-width:760px) and (max-width:799px){html{font-size:22px;} .deadline{ width: 28%; } #main_img {width: 68%;}  #main_img1 {width: 68%;}.banner {width: 410px; height: 26px;} .banner ul li {width: 410px; height: 26px;}}
+        @media (min-width:800px) and (max-width:839px){html{font-size:23px;} .deadline{ width: 24%; } #main_img {width: 67%;}  #main_img1 {width: 67%;}.banner {width: 420px; height: 27px;} .banner ul li {width: 420px; height: 27px;}}
+        @media (min-width:840px) and (max-width:879px){html{font-size:24px;} .deadline{ width: 20%; } #main_img {width: 66%;}  #main_img1 {width: 66%;}.banner {width: 430px; height: 28px;} .banner ul li {width: 430px; height: 28px;}}
+        @media (min-width:880px) and (max-width:919px){html{font-size:25px;} .deadline{ width: 20%; } #main_img {width: 65%; }  #main_img1 {width: 65%; } .banner {width: 440px; height: 29px;} .banner ul li {width: 440px; height: 29px;}}
+        @media (min-width:920px) and (max-width:959px){html{font-size:26px;} .deadline{ width: 20%; } #main_img {width: 64%; }  #main_img1 {width: 64%; } .banner {width: 450px; height: 30px;} .banner ul li {width: 450px; height: 30px;}}
+        @media (min-width:960px) and (max-width:999px){html{font-size:27px;} .deadline{ width: 20%; } #main_img {width: 63%; }  #main_img1 {width: 63%; } .banner {width: 460px; height: 31px;} .banner ul li {width: 460px; height: 31px;}}
+        @media (min-width:1000px) and (max-width:1039px){html{font-size:28px;} .deadline{ width: 20%; } #main_img {width: 62%;}  #main_img1 {width: 62%; } .banner {width: 470px; height: 32px;} .banner ul li {width: 470px; height: 32px;}}
+        @media (min-width:1040px) and (max-width:1079px){html{font-size:29px;} .deadline{ width: 20%; } #main_img {width: 61%; }  #main_img1 {width: 61%; } .banner {width: 480px; height: 33px;} .banner ul li {width: 480px; height: 33px;}}
+        @media (min-width:1080px) and (max-width:1119px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 60%; }  #main_img1 {width: 60%; } .banner {width: 490px; height: 34px;} .banner ul li {width: 490px; height: 34px;}}
+        @media (min-width:1120px) and (max-width:1159px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 59%; }  #main_img1 {width: 59%; } .banner {width: 500px; height: 34px;} .banner ul li {width: 500px; height: 34px;}}
+        @media (min-width:1160px) and (max-width:1199px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 58%; }  #main_img1 {width: 58%; } .banner {width: 510px; height: 34px;} .banner ul li {width: 510px; height: 34px;}}
+        @media (min-width:1200px) and (max-width:1239px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 57%; }  #main_img1 {width: 57%; } .banner {width: 520px; height: 34px;} .banner ul li {width: 520px; height: 34px;}}
+        @media (min-width:1240px) and (max-width:1319px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 56%; }  #main_img1 {width: 56%; } .banner {width: 530px; height: 34px;} .banner ul li {width: 530px; height: 34px;}}
+        @media (min-width:1320px) and (max-width:1359px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 55%; }  #main_img1 {width: 55%; } .banner {width: 540px; height: 34px;} .banner ul li {width: 540px; height: 34px;}}
+        @media (min-width:1360px) and (max-width:1399px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 54%; }  #main_img1 {width: 54%; } .banner {width: 550px; height: 34px;} .banner ul li {width: 550px; height: 34px;}}
+        @media (min-width:1400px) and (max-width:1439px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 53%; }  #main_img1 {width: 53%; } .banner {width: 560px; height: 34px;} .banner ul li {width: 560px; height: 34px;}}
+        @media (min-width:1440px) and (max-width:1479px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 52%; }  #main_img1 {width: 52%; } .banner {width: 570px; height: 34px;} .banner ul li {width: 570px; height: 34px;}}
+        @media (min-width:1480px) and (max-width:1519px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 51%; }  #main_img1 {width: 51%; } .banner {width: 580px; height: 34px;} .banner ul li {width:580px; height: 34px;}}
+        @media (min-width:1520px) and (max-width:1559px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 50%; }  #main_img1 {width: 50%; } .banner {width: 590px; height: 34px;} .banner ul li {width: 590px; height: 34px;}}
+        @media (min-width:1560px) and (max-width:1599px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 49%; margin: 0 6% 0 6%;}  #main_img1 {width: 49%; margin: 0 6% 0 6%;} .banner {width: 600px; height: 34px;} .banner ul li {width: 600px; height: 34px;}}
+        @media (min-width:1600px) and (max-width:1639px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 48%; margin: 0 6% 0 6%;}  #main_img1 {width: 48%; margin: 0 6% 0 6%;} .banner {width: 610px; height: 34px;} .banner ul li {width: 610px; height: 34px;}}
+        @media (min-width:1640px) and (max-width:1679px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 47%;margin: 0 6% 0 6%;}  #main_img1 {width: 47%;margin: 0 6% 0 6%;} .banner { width: 620px; height: 34px;} .banner ul li {width: 620px; height: 34px;}}
+        @media (min-width:1680px) and (max-width:1719px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 46%; margin: 0 6% 0 6%;}  #main_img1 {width: 46%;margin: 0 6% 0 6%;} .banner {width: 630px; height: 34px;} .banner ul li {width:630px; height: 34px;}}
+        @media (min-width:1720px) and (max-width:1759px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 45%; margin: 0 6% 0 6%;}  #main_img1 {width: 45%;margin: 0 6% 0 6%;} .banner {width: 640px; height: 34px;} .banner ul li {width: 640px; height: 34px;}}
+        @media (min-width:1760px) and (max-width:1799px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 44%;margin: 0 6% 0 6%;}  #main_img1 {width: 44%;margin: 0 6% 0 6%;} .banner {width: 650px; height: 34px;} .banner ul li {width: 650px; height: 34px;}}
+        @media (min-width:1800px) and (max-width:1839px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 43%; margin: 0 6% 0 6%;}  #main_img1 {width: 43%;margin: 0 6% 0 6%;} .banner {width: 660px; height: 34px;} .banner ul li {width: 660px; height: 34px;}}
+        @media (min-width:1840px) and (max-width:1879px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 42%; margin: 0 6% 0 6%;}  #main_img1 {width: 42%;margin: 0 6% 0 6%;} .banner {width: 670px; height: 34px;} .banner ul li {width:670px; height: 34px;}}
+        @media (min-width:1880px) and (max-width:1919px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 41%; margin: 0 6% 0 6%;}  #main_img1 {width: 41%;margin: 0 6% 0 6%; } .banner {width: 680px; height: 34px;} .banner ul li {width: 680px; height: 34px;}}
+        @media (min-width:1920px) and (max-width:1959px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 40%; margin: 0 6% 0 6%;}  #main_img1 {width: 40%;margin: 0 6% 0 6%;} .banner {width: 690px; height: 34px;} .banner ul li {width: 690px; height: 34px;}}
+        @media (min-width:1960px) and (max-width:1999px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 38%; margin: 0 6% 0 6%; }  #main_img1 {width: 38%; margin: 0 6% 0 6%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2000px) and (max-width:2039px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 36%; margin: 0 7% 0 7%; }  #main_img1 {width: 36%; margin: 0 7% 0 7%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2040px) and (max-width:2079px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 34%; margin: 0 8% 0 8%; }  #main_img1 {width: 34%; margin: 0 8% 0 8%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2080px) and (max-width:2119px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 32%; margin: 0 9% 0 9%; }  #main_img1 {width: 32%; margin: 0 9% 0 9%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2120px) and (max-width:2159px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 30%; margin: 0 10% 0 10%; }  #main_img1 {width: 30%; margin: 0 10% 0 10%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2160px) and (max-width:2199px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 28%; margin: 0 11% 0 11%; }  #main_img1 {width: 28%; margin: 0 11% 0 11%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2200px) and (max-width:2239px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 26%; margin: 0 12% 0 12%; }  #main_img1 {width: 26%; margin: 0 12% 0 12%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2240px) and (max-width:2279px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 24%; margin: 0 13% 0 13%; }  #main_img1 {width: 24%; margin: 0 13% 0 13%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;}}
+        @media (min-width:2280px) and (max-width:2319px){html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 22%; margin: 0 14% 0 14%; }  #main_img1 {width: 22%; margin: 0 14% 0 14%;} .banner {width: 700px; height: 34px;} .banner ul li {width: 700px; height: 34px;} }
+        @media (min-width:2320px) {html{font-size:30px;} .deadline{ width: 20%; } #main_img {width: 20%; margin: 0 15% 0 15%; }  #main_img1 {width: 20vw; margin: 0 15% 0 15%;} .banner {width: 790px; height: 34px;} .banner ul li {width: 790px; height: 34px;}}
+        /* https://www.tablesgenerator.com/html_tables */
+        .tablesorter  {border-collapse:collapse;border-color:#F39900;border-spacing:0;border-style:solid;border-width:1px;}
+        .tablesorter td{background-color:#fff;border-color:#F39900;border-style:solid;border-width:0px;color:#444;
+             font-weight:300; overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tablesorter th{background-color:#F39900;border-color:#F39900;border-style:solid;border-width:0px;color:#fff;
+            font-weight:400; background-repeat: no-repeat; background-position: right center; overflow:hidden;padding:10px 5px;word-break:normal;}
+        thead th.up {
+            padding-right: 20px;
+            background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+        }
+        thead th.down {
+            padding-right: 20px;
+            background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+        }
+
+        .btn {
+            border: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+            font-weight: 700;
+            background-color: #13558B;
+            padding: 0.34em 2em;
+            margin: 0 auto;
+            box-shadow: 0 3px 9px rgba(0,0,0,0.20);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 490%;
+            width: 140%;
+            background: #F39900;
+            -webkit-transition: all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+            -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+            transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        }
+
+        .btn:hover:after {
+            -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+            transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        }
+        .swiper-pagination{
+            position: relative !important;
+        }
+        .swiper-slide, .swiper-wrapper{
+            display: block;
+        }
+        .swiper-container{
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner {position: relative; line-height: 130%; /*width: 700px; height: 30px;*/ padding: 0; margin:0 auto;  overflow: hidden;}
+        .banner ul {position: absolute; margin: 0; list-style: none; padding: 0;}
+        .banner ul li {float: left; /*width: 700px; height: 30px;*/ margin-bottom:0; padding: 0;}
+
+        .div-center {
+            position: relative;
+            margin-bottom: 15vh;
+        }
+
+        .logo-footer {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            transform : translateY(-100%);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css?after"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js?after"></script>
+    <link rel="stylesheet" href="https:z//cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flipcountdown/3.0.5/jquery.flipcountdown.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function(){
+            $('table').tablesorter({
+                cssAsc: 'up',
+                cssDesc: 'down',
+                sortMultiSortKey: 'altKey',
+            });
+
+            let remainTime = document.getElementById("remain-time");
+            function diffDay() {
+                const masTime = new Date('<%end_date%>');
+                const tTime = new Date('<%=start_date%>');
+                const todayTime = new Date();
+                const diff = masTime - todayTime;
+
+               /* const diffDay = String(Math.floor(diff / (1000 * 60 * 60 * 24)) ? Math.floor(diff / (1000 * 60 * 60 * 24)) + '일' : '');
+                const diffHour = String(Math.floor((diff / (1000 * 60 * 60)) % 24) ? Math.floor((diff / (1000 * 60 * 60)) % 24) + '시간' : '');
+                const diffMin = String(Math.floor((diff / (1000 * 60)) % 60) ? Math.floor((diff / (1000 * 60)) % 60) + '분' : '');
+                const diffSec = String(Math.floor(diff / 1000 % 60) ? Math.floor(diff / 1000 % 60) + '초' : '');*/
+                if (todayTime > tTime && todayTime < masTime) {
+                    $('#remain-time2').hide();
+                    if(remainTime.innerText === '이벤트는 2월 9일 9시에 시작됩니다.')
+                        remainTime.innerText = '';
+                    if (matchMedia("screen and (min-width: 1440px)").matches) {
+                        jQuery('#remain-time').flipcountdown({
+                            size: 'lg',
+                            beforeDateTime: '<%= end_date %>'
+                        });
+                    }
+                    else if (matchMedia("screen and (min-width: 800px) and (max-width: 1439px)").matches) {
+                        jQuery('#remain-time').flipcountdown({
+                            size: 'md',
+                            beforeDateTime: '<%= end_date %>'
+                        });
+                    }
+                    else if (matchMedia("screen and (min-width: 400px) and (max-width: 799px)").matches) {
+                        jQuery('#remain-time').flipcountdown({
+                            size: 'sm',
+                            beforeDateTime: '<%= end_date %>'
+                        });
+                    }
+                    else{
+                        jQuery('#remain-time').flipcountdown({
+                            size: 'xs',
+                            beforeDateTime: '<%= end_date %>'
+                        });
+                    }
+                }
+                else if(todayTime < tTime){
+                    remainTime.innerText = '이벤트는 2월 9일 9시에 시작됩니다.';
+                    if (matchMedia("screen and (min-width: 1440px)").matches) {
+                        jQuery('#remain-time2').flipcountdown({
+                            size: 'lg',
+                            beforeDateTime: '<%= start_date %>'
+                        });
+                    }
+                    else if (matchMedia("screen and (min-width: 800px) and (max-width: 1439px)").matches) {
+                        jQuery('#remain-time2').flipcountdown({
+                            size: 'md',
+                            beforeDateTime: '<%= start_date %>'
+                        });
+                    }
+                    else if (matchMedia("screen and (min-width: 400px) and (max-width: 799px)").matches) {
+                        jQuery('#remain-time2').flipcountdown({
+                            size: 'sm',
+                            beforeDateTime: '<%= start_date %>'
+                        });
+                    }
+                    else{
+                        jQuery('#remain-time2').flipcountdown({
+                            size: 'xs',
+                            beforeDateTime: '<%= start_date %>'
+                        });
+                    }
+                }
+                else if (todayTime >= masTime){
+                    remainTime.innerText = '이벤트가 종료되었습니다.';
+                }
+                if(remainTime.innerText === ('이벤트는 2월 9일 9시에 시작됩니다.')){
+                    $('.deadlineDiv').hide();
+                    $('.qrcode').hide();
+                    $('.waitDiv').show();
+                }
+                else if( remainTime.innerText === '이벤트가 종료되었습니다.'){
+                    $('.deadlineDiv').hide();
+                    $('.qrcode').hide();
+                    $('.waitDiv').hide();
+                    $('.oneDiv').hide();
+                    $('.stopDiv').show();
+                }
+                else{
+                    $('.deadlineDiv').show();
+                    $('.qrcode').show();
+                    $('.waitDiv').hide();
+                }
+                //swiper.update();
+            }
+
+            diffDay();
+            setInterval(diffDay, 1000);
+
+            var $banner = $(".banner").find("ul");
+
+            var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+            var $bannerHeight = $banner.children().outerHeight(); // 높이
+            var $length = $banner.children().length;//이미지의 갯수
+            var rollingId;
+
+            //정해진 초마다 함수 실행
+            rollingId = setInterval(function() { rollingStart(); }, 3000);//다음 이미지로 롤링 애니메이션 할 시간차
+
+            function rollingStart() {
+                $banner.css("width", $bannerWidth * $length + "px");
+                $banner.css("height", $bannerHeight + "px");
+                //alert(bannerHeight);
+                //배너의 좌측 위치를 옮겨 준다.
+                $banner.animate({left: - $bannerWidth + "px"}, 1500, function() { //숫자는 롤링 진행되는 시간이다.
+                    //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                    $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                    //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                    $(this).find("li:first").remove();
+                    //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                    $(this).css("left", 0);
+                    //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+                });
+            }
+        })
+    </script>
+</head>
+<body class = "fade">
+<div class="div-center" >
+    <div class="bodyclass">
+        <div style ="text-align: center">
+            <img id="main_img1" src="images/Logo/top_img1.png" style="display: inline-flex;">
+            <img id="main_img" src="images/Logo/top_img2.png" style="display: inline-flex;">
+            <!--<h1><%=event_title%></h1>-->
+            <!--<h3><%=start_date%> ~ <%=end_date%></h3>-->
+            <h3 id="remain-time"  style="font-weight: 200;"><br></h3>
+            <h3 id="remain-time2"></h3>
+            <h3 class="oneDiv" style="color: red"> 수령 할 수 있는 상품 수는 <%=duplicate_goods_count%>개 입니다! </h3>
+        </div>
+        <div class="contents" style="display: inline-flex;">
+            <div class="banner">
+                <ul><!-- 3글자 이하인 경우 ? 두번째 글자만 가리기 : 세번째 글자 이후를 가리기 -->
+                    <% data_list2.forEach(function(list) { %>
+                        <% if(list.user_name.length < 4) {%>
+                            <li><%=list.user_name.replace(/(?<=.{1})./, "*");%>님이 <%=list.goods_title%>에 당첨되셨습니다🎉</li>
+                        <% } else{%>
+                            <li><%=list.user_name.replace(/(?<=.{2}).gi/, "*");%>님이 <%=list.goods_title%>에 당첨되셨습니다🎉</li>
+                        <%} }) %>
+                </ul>
+            </div>
+        </div>
+        <div id="waitDiv" class="waitDiv" style="position: relative;"><img id="waitImg" style="height: 30vh;" src="https://media.tenor.com/zecVkmevzcIAAAAC/please-wait.gif"></div>
+        <div id="stopDiv" class="stopDiv" style="position: relative; display: none; "><img id="stopImg" style="height: 40vh;" src="images/stop-sign.gif"></div>
+        <div id="deadlineDiv" class="deadlineDiv" style="position: relative; font-size: 0.8em;">
+            <table class="tablesorter" style="display: inline-block;">
+                <thead>
+                <tr>
+                    <th style="width: 12%;">번호</th>
+                    <th style="width: 12%;">남은 상품</th>
+                    <th style="width: 15%;">링크</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% data_list.forEach(function(list) { %>
+                <tr>
+                    <td><%-list.spot_title%></td>
+                    <% if(list.not_assign_goods === 1) { %>
+                        <td id="goodsTd" class="goodsTd" style="color: crimson;">1</td>
+                    <% } else if(list.not_assign_goods === 0){ %>
+                        <td id="goodsTd" class="goodsTd" style="color: crimson;">(마감)</td>
+                    <%} else {%>
+                        <td id="goodsTd" class="goodsTd"><%- list.not_assign_goods%></td>
+                    <%}%>
+                    <td><a style="text-decoration : none; color: mintcream; " href=<%=list.spot_url%>><button class="btn"><span>입장하기</span></button></a></td>
+                </tr>
+                <% } ) %>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        <!--        <div id="spot-id02" class="swiper-container">
+            <div id="spot-id03" class="swiper-wrapper">
+                <% //data_list.forEach(function(list) { %>
+                <div class="swiper-slide">
+                    // <h4 style="font-weight: 200;"><%-//list.spot_title%> </h4>
+                    // <h4>장소 QR코드:</h4>
+                    <div id="deadlineDiv" class="deadlineDiv" style="position: relative;">
+                        <% //if(list.not_assign_goods){ %>
+                            <a id="urlA" class="urlA" href=<%=//list.spot_url%>><img id="qrcode" class="qrcode" width="260px;" height="294px;" src=  <%=//list.spot_qrcode%> ></a>
+                            // <img class="deadline" src="https://mblogthumb-phinf.pstatic.net/MjAxOTA1MTZfMTMx/MDAxNTU3OTg0MjI4MzYx.QXMxnkqnjaNjzJ84jfSnH5ccYvCi8v1gddqtkN0xNJQg.ZZ0RlYaBvODWRGqxpuasfjv583y4ABNUNZQJ-i_uOr0g.PNG.banyson/%EB%A7%88%EA%B0%90%EB%8F%84%EC%9E%A5_%281%29.png?type=w2">
+                        <%//} else{%>
+                            <img style="position: absolute;" class="deadline" src="https://mblogthumb-phinf.pstatic.net/MjAxOTA1MTZfMTMx/MDAxNTU3OTg0MjI4MzYx.QXMxnkqnjaNjzJ84jfSnH5ccYvCi8v1gddqtkN0xNJQg.ZZ0RlYaBvODWRGqxpuasfjv583y4ABNUNZQJ-i_uOr0g.PNG.banyson/%EB%A7%88%EA%B0%90%EB%8F%84%EC%9E%A5_%281%29.png?type=w2">
+                            <img id="qrcode" class="qrcode" width="260px;" height="294px;" src=  <%=//list.spot_qrcode%> >
+                        <%//}%>
+                    </div>
+                    // <h4><a href=<%=//list.spot_url%>>메타버스 장소 바로가기</a></h4>
+                    <h4 class="oneDiv">남은 상품 수: <%-//list.not_assign_goods%> </h4>
+                </div>
+                <% //} ) %>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>-->
+    </div>
+    </div>
+    <div class="logo-footer">
+        <hr>
+        <img src="https://www.koreatech.ac.kr/resources/_Templet/Logo/logo_kor/Img/logo.png" style="width: 10rem; height: 2.5rem;" />
+    </div>
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        //기본 셋팅
+        //방향 셋팅 vertical 수직, horizontal 수평 설정이 없으면 수평
+        direction: 'horizontal',
+        //한번에 보여지는 페이지 숫자
+        slidesPerView: 1,
+        //페이지와 페이지 사이의 간격
+        spaceBetween: 30,
+        //드레그 기능 true 사용가능 false 사용불가
+        debugger: true,
+        //마우스 휠기능 true 사용가능 false 사용불가
+        mousewheel: true,
+        //반복 기능 true 사용가능 false 사용불가
+        loop: true,
+        //선택된 슬라이드를 중심으로 true 사용가능 false 사용불가 djqt
+        centeredSlides: true,
+        // 페이지 전환효과 slidesPerView효과와 같이 사용 불가
+        // effect: 'fade',
+        effect: 'coverflow',
+        observer: true,
+        observeParents: true,
+        //자동 스크를링
+        autoplay: {
+            //시간 1000 이 1초
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        //페이징
+        pagination: {
+            //페이지 기능
+            el: '.swiper-pagination',
+            //클릭 가능여부
+            clickable: true,
+        },
+        //방향표
+        navigation: {
+            //다음페이지 설정
+            nextEl: '.swiper-button-next',
+            //이전페이지 설정
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+</body>
+</html>

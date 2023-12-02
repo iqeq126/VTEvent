@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>이벤트 리스트 표기</title>
+    <meta charset="utf-8">
+    <meta http-equiv='Content-Type' content='text/html'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="div_center">
+    <div class="bodyclass">
+
+        <div class="spot-class00" style="padding: 5px 0px 0px 0px;">
+            <div id="spot-id01" class="spot-class01" style="text-align: left;">
+                <h2> 이벤트 정보리스트 </h2>
+                <br>
+                <table id="current_apply_list" style="border-bottom: 1px solid #dee2e6; margin-top: 2rem">
+                    <colgroup>
+                        <col style="width: 40%" />
+                        <col style="width: 20%" />
+                        <col style="width: 20%" />
+                        <col style="width: 10%" />
+                        <col style="width: 10%" />
+
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <td colspan="3"><div class="title-text-style" style="text-align: left; width: 200px;">▣ 이벤트 현황</div></td>
+                        <td colspan="2" style="width: auto"></td>
+                        <td colspan="4" style="text-align: right; vertical-align: middle; padding-right: 0px"></td>
+                <span>
+
+            </span>
+
+                    </tr>
+                    <tr class="head_style">
+                        <td></td>
+                        <td>이벤트 이름</td>
+                        <td>시작 시간</td>
+                        <td>종료 시간</td>
+                        <td>이벤트 중복 허용 개수</td>
+                        <td>활성여부</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <% data_list.forEach(function(list) { %>
+                        <td><%-list.title%> </td>
+                    <td><%-list.start_date%> </td>
+                    <td><%-list.end_date%> </td>
+                    <td><%-list.duplicate_goods_count%> </td>
+                    <td><%-list.is_available%> </td>
+                    </tr>
+                    <% }) %>
+
+                    </tbody>
+
+                </table>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>

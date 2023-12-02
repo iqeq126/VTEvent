@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+  <title>VT Event Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv='Content-Type' content='text/html'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+  <style>
+    .spot-class00{display: flex; justify-content: space-evenly; background-color: white;}
+    .spot-class00 * {font-family: 'Jua', sans-serif;}
+
+    .title{ font-weight: 600; color: #1B5A8E; }
+    .title2{ font-weight: 600; color: #00B7FF; }
+
+    @media (max-width:360px){html{font-size:13px;}}
+    @media (min-width:361px) and (max-width:399px){html{font-size:14px;}}
+    @media (min-width:400px) and (max-width:439px){html{font-size:15px;}}
+    @media (min-width:440px) and (max-width:479px){html{font-size:16px;}}
+    @media (min-width:480px) and (max-width:519px){html{font-size:17px;}}
+    @media (min-width:520px) and (max-width:559px){html{font-size:18px;}}
+    @media (min-width:560px) and (max-width:599px){html{font-size:19px;}}
+    @media (min-width:600px) and (max-width:639px){html{font-size:20px;}}
+    @media (min-width:640px) and (max-width:679px){html{font-size:21px;}}
+    @media (min-width:680px) and (max-width:719px){html{font-size:22px;}}
+    @media (min-width:720px) and (max-width:759px){html{font-size:23px;}}
+    @media (min-width:760px) and (max-width:799px){html{font-size:24px;}}
+    @media (min-width:800px) and (max-width:839px){html{font-size:25px;}}
+    @media (min-width:840px) and (max-width:879px){html{font-size:26px;}}
+    @media (min-width:880px){html{font-size:27px;}}
+
+  </style>
+</head>
+<body>
+<div class="div_center" >
+  <div class="bodyclass">
+    <img src ="images/dummy.png" width="100%" style="display: block" >
+
+    <div class="spot-class00" style="alignment: center; width: 100%; background: #ffc04c" >
+      <div class="eventddaycount">
+
+
+                  <span class="title" style="margin-top: 20px; display:inline-block; margin-bottom: 20px;" >이벤트 시작 전까지 <span class="title2" id="count"></span>  남았습니다. </span>
+
+
+            </div>
+      </div>
+
+    <img src ="images/dummy2.png" width="100%">
+  </div>
+
+</div>
+
+<script>
+  var dday = new Date("Feb 9, 2023, 9:00:00").getTime();
+  var test_dday = new Date("Jan 21, 2023, 14:48:00").getTime();
+  var today_calc = new Date().getTime();
+  setInterval(function() {
+    var today = new Date().getTime();
+    var gap = dday - today;
+    var day = Math.ceil(gap / (1000 * 60 * 60 * 24));
+    var hour = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var min = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));
+    var sec = Math.ceil((gap % (1000 * 60)) / 1000);
+
+    document.getElementById("count").innerHTML = day + "일 " + hour + "시간 " + min + "분 " + sec + "초 ";
+    if(dday < today_calc) {
+      window.location.href = '/dntc2023';
+    }
+  }, 1000);
+
+
+</script>
+</body>
+</html>

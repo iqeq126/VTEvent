@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>사용자 등록</title>
+    <meta charset="utf-8">
+    <meta http-equiv='Content-Type' content='text/html'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <style>
+        .spot-class00{display: flex; justify-content: space-evenly;}
+        .spot-class00 * {font-family: 'Jua', sans-serif;}
+        @media screen and (max-width: 620px){
+            .title{font-size: 20px; padding: 4px 0 3px 10px; font-weight: 600; color: #1B5A8E; }
+            #spot-id01{width: 100%;} .warning{width: 87%;} #paganame{font-size: 30px;}
+            #signup-user-unique-number{width: 51%;} #admin-signup-certification-box .btnChk{width: 29%;} input[type = text],input[type = number]{width: 83%;} .btnChk{width: 89.3%;} .submit{width: 83%;}
+        }
+        @media screen and (max-width: 900px) and (min-width: 621px){
+            .title{font-size: 28px; padding: 8px 0 3px 15px; font-weight: 600; color: #1B5A8E; }
+            #spot-id01{width: 700px;} .warning{width: 91%;} #paganame{font-size: 36px}
+            #signup-user-unique-number{width: 56%;} #admin-signup-certification-box .btnChk{width: 33.5%;} input[type = text],input[type = number]{width: 90%;} .btnChk{width: 93.7%;} .submit{width: 90%;}
+            .btnChk{margin: 8px 0 0 0!important;}
+        }
+        @media screen and (min-width: 901px) {
+            .title{font-size: 28px; padding: 8px 0 3px 15px; font-weight: 600; color: #1B5A8E; }
+            #spot-id01 {width: 755px;  border: 3px solid rgba(0, 0, 0, 0.37);}  .warning{width: 100%;} #paganame{ font-size: 40px}
+            #signup-user-unique-number{width: 450px;} #admin-signup-certification-box .btnChk{width: 180px;} input[type = text],input[type = number]{width: 650px;} .btnChk{width: 672px;} .submit{width: 650px;}
+            .spot-class00{justify-content: space-between;  margin-left: 30.5%; margin-top: 70px} #spot-id01{margin-left: 0!important;} .logo{width: 100%; }
+        }
+        input[type = text],input[type = number]{height: 40px;font-size: 20px; border: 2px solid gainsboro; background-color: #FFFFFF; border-radius: 30px; padding: 0 0 0 20px;}
+        input[type = text]:focus,input[type = number]:focus{border: 2px solid #1B5A8E; outline: none;}
+        /*.title{font-size: 28px; padding: 8px 0 3px 15px; font-weight: 600; color: #1B5A8E; }*/
+        .warning{text-align: center;}
+        #spot-id01 { border-radius: 15px;}
+        .btnChk{margin: 8px 0 0 0; border-radius: 30px; border: 0px; background-color: whitesmoke; height: 42px; cursor: pointer; font-size: 20px; color: white; }
+        .submit{opacity: 1; margin: 0; border-radius: 30px; border: 0px; background-color: whitesmoke; height: 60px; cursor: pointer; color: white; font-size: 24px;}
+    </style>
+
+</head>
+
+<body>
+<div class="div_center" >
+    <div class="bodyclass">
+        <div class="spot-class00">
+            <div id="spot-id01" class="spot-class01" style="text-align: left; color:black;">
+                <div class="input-form2">
+                    <form id="request-admin-form" method="post">
+                        <div class="user_profile_text">
+                            <h1 id = "paganame" style="color:#F28705; text-align: center; margin-top: 0;">사용자 등록 페이지</h1>
+                            <ul style="list-style: none">
+
+                                <li>
+                                    <div class="title"> 이름 </div>
+                                    <div class="contents">
+                                        <label style="display: none;" for="admin-signup-user-name"></label>
+                                        <input type="text" placeholder="성명 입력" name="name" id="admin-signup-user-name">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="title"> 휴대폰 번호 </div>
+                                    <div class="contents">
+                                        <div class="id-box" id="admin-signup-phonenumber-box">
+                                            <label style="display: none;" for="signup-user-mobile-phone-number"></label>
+                                            <input type="number" inputmode="decimal" pattern="[0-9]*" placeholder="숫자만 입력" name="phone" id="signup-user-mobile-phone-number">
+                                            <input id = "btn_request" class="btnChk" type="button" value="인증번호 요청" disabled="true">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title"> 휴대폰 인증번호 </div>
+                                    <div class="contents">
+                                        <div class="id-box" id="admin-signup-certification-box" >
+                                            <label style="display: none;" for="signup-user-unique-number"></label>
+                                            <input type="number" inputmode="decimal" pattern="[0-9]*" placeholder="인증번호 입력" name="unique_number" id="signup-user-unique-number">
+                                            <input id="btn_check" class="btnChk" type="button" value="확인" disabled="true">
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class ="warning">
+                                    <p id="regist-checkup" style="color:orangered"></p>
+                                </div>
+                                <li style="display: inline-flex; margin-bottom: 3%;">
+                                    <input id="btn_checkbox" type="checkbox" value="" class="checkbox" style="margin: 0;">
+                                    <label class="checkbox">(이벤트 쿠폰)<a href="/personal">개인정보 수집</a>에 동의합니다.</label>
+                                </li>
+                                <li>
+                                    <input id="btn_submit" type="submit" value="인증하기" class ="submit" disabled="true">
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                    <h1 class ="logo" style="text-align: center; padding: 0 0 0 0; margin: 0;"><img src ="https://portal.koreatech.ac.kr/images/logo_n.png" width="231.25px" height="47.5px"></h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+<script>
+    function swapColor(str){
+        let buttonColor = document.getElementById(str);
+        buttonColor.style.background = '#1B5A8E';
+        buttonColor.disabled = false;
+    }
+    $(document).ready(function() {
+        swapColor("btn_request");
+    });
+    function swap(str){
+        let color = document.getElementById(str);
+        color.style.color = '#cbcbcb';
+        color.style.backgroundColor = 'white'
+    }
+
+    var certification_phone = false;
+    var certification_uq = false;
+    $('#admin-signup-phonenumber-box').keydown(function (e) {
+        var k = e.keyCode;
+        if ((90 >= k && k >= 65) // a ~ z
+            || (111 >= k && k >= 106) // keypad operator
+            || (192 >= k && k >= 186) // -,=./;
+            || (222 >= k && k >= 219) // ']\[
+            || k == 32 // space bar
+            || k == 59 // FF ;
+            || k == 61 // FF =
+            || k == 173 // FF -
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    function debugAjaxReceviedError(title, message) {
+        alert(message);
+    }
+
+    //인증번호 요청 버튼
+    $("#admin-signup-phonenumber-box .btnChk").click(function () {
+        var phone = $('#admin-signup-phonenumber-box input[type=number]').val();
+        phone = phone.replace(/-/gi, '');
+        if (phone.length < 10 || phone.length > 11) {
+            $('#regist-checkup').text('휴대폰 번호를 확인해주세요.');
+            alert($('#regist-checkup').text());
+        }  else {
+            var url = "/certification";
+            var params = "phone=" + phone;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: params,
+                success: function (args) {
+                    if (args['is_success']) {
+                        $('#regist-checkup').text('인증번호가 전송되었습니다.');
+                        alert($('#regist-checkup').text());
+                        $("#admin-signup-user-name").attr("readonly",false).attr("disabled",false);
+                        $("#signup-user-mobile-phone-number").attr("readonly",false).attr("disabled",false);
+                        $("#signup-user-unique-number").attr("readonly",false).attr("disabled",false);
+                        swapColor("btn_check");
+                    } else {
+                        $('#regist-checkup').text(args['error_message']);
+                        //alert($('#regist-checkup').text());
+                        debugAjaxReceviedError("certification", args['error_message']);
+                    }
+                },
+                error: function (request,status,error) {
+                    alert("ajax response error \ncode:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                }
+            });
+        }
+
+    });
+    //휴대폰 인증번호 확인 버튼
+    $("#admin-signup-certification-box .btnChk").click(function () {
+        var phone = $('#admin-signup-phonenumber-box input[type=number]').val();
+        var certification = $('#admin-signup-certification-box input[type=number]').val();
+        var url = "/checkCertificationSMS";
+        var params = "unique_number=" + certification + "&phone=" + phone;
+
+        if(certification.length === 0) {
+            $('#regist-checkup').text('인증번호를 입력하세요.');
+            alert($('#regist-checkup').text());
+            certification_phone = false;
+        } else if(certification.length !== 6) {
+            $('#regist-checkup').text('인증번호를 확인하세요.');
+            alert($('#regist-checkup').text());
+            certification_phone = false;
+        } else {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: params,
+                success: function (args) {
+                    if (args['is_success']) {
+                        //$('#regist-checkup').text('인증번호가 확인되었습니다.');
+                        alert('인증번호가 확인되었습니다.');
+                        $('#regist-checkup').text('');
+                        $("#admin-signup-user-name").attr("readonly",true).attr("disabled",false);
+                        $("#signup-user-mobile-phone-number").attr("readonly",true).attr("disabled",false);
+                        $("#signup-user-unique-number").attr("readonly",true).attr("disabled",false);
+                        swapColor("btn_submit");
+                        swap("admin-signup-user-name");
+                        swap("signup-user-mobile-phone-number");
+                        swap("signup-user-unique-number");
+                        $('#admin-signup-phonenumber-box input[type=number]').change(function () {
+                            if(phone !== $(this).val()) {
+                                certification_phone = false;
+                            } else {
+                                certification_phone = true;
+                            }
+                        });
+                        certification_phone = true;
+                        certification_uq = true;
+                    } else {
+                        $('#regist-checkup').text(args['error_message']);
+                        debugAjaxReceviedError("checkCertificationSMS", args['error_message']);
+                        $("#admin-signup-user-name").attr("readonly",false).attr("disabled",false);
+                        $("#signup-user-mobile-phone-number").attr("readonly",false).attr("disabled",false);
+                        $("#signup-user-unique-number").attr("readonly",false).attr("disabled",false);
+                        certification_uq = false;
+                    }
+                },
+                error: function (request,status,error) {
+                    alert("ajax response error \ncode:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                }
+            });
+        }
+
+
+    });
+
+    //등록하기 버튼
+    $('#request-admin-form input[type=submit]').click(function (e) {
+        if(!$('#btn_checkbox').is(':checked')){
+            $('#regist-checkup').text('개인정보 수집에 동의해주세요.');
+            alert($('#regist-checkup').text());
+        }
+        else if($('#request-admin-form input[name=name]').val() === '') {
+            $('#regist-checkup').text('이름을 입력하세요.');
+            alert($('#regist-checkup').text());
+        }
+        else if($('#request-admin-form input[name=mobile_phone_number]').val() === ''){
+            $('#regist-checkup').text('휴대폰번호를 입력하세요.');
+            alert($('#regist-checkup').text());
+        }
+        else if($('#request-admin-form input[name=unique_number]').val() === ''){
+            $('#regist-checkup').text('인증번호를 입력하세요.');
+            alert($('#regist-checkup').text());
+        }
+        else if(!certification_phone) {
+            $('#regist-checkup').text('휴대폰 인증 번호를 확인해주세요.');
+            alert($('#regist-checkup').text());
+        }
+        else if(!certification_uq) {
+            $('#regist-checkup').text('휴대폰 인증 번호를 확인해주세요!');
+            alert($('#regist-checkup').text());
+        }
+        else if($('#btn_checkbox').val() === 'false'){
+            $('#regist-checkup').text('개인정보 수집에 동의해주세요.');
+            alert($('#regist-checkup').text());
+        }
+        else {
+            var formData = $("#request-admin-form").serialize();
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: "/mappingsession",
+                    data: formData,
+                    success: function (args) {
+                        if (args['is_success']) {
+                            //self.close();
+                            alert('사용자 등록 또는 업데이트가 완료되었습니다!')
+                            location.href = 'http://event.vt-lrs.com/dntc2023';
+
+                        } else {
+                            $('#regist-checkup').text(args['error_message']);
+                            alert($('#regist-checkup').text());
+                            $('#request-admin-form input[name=mobile_phone_number]').val('')
+                            $('#request-admin-form input[name=unique_number]').val('')
+                            $("#admin-signup-user-name").attr("readonly",false).attr("disabled",false);
+                            $("#signup-user-mobile-phone-number").attr("readonly",false).attr("disabled",false);
+                            $("#signup-user-unique-number").attr("readonly",false).attr("disabled",false);
+                            certification_phone = false;
+                            certification_uq = false;                        }
+                    },
+                    error: function (request,status,error) {
+                        alert("ajax response error \ncode:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                    }
+                });
+
+        }
+        e.preventDefault();
+        return false;
+    });
+</script>
+
+</body>
+</html>
